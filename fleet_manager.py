@@ -29,9 +29,23 @@ def search_crew(names, ranks, divs, ids):
 
 
 def filter_by_division(names, divs):
+"""
 
+def calculate_payroll():
+    total_payroll = 0
+    for _ in ranks:
+        if _ == "Captain":
+            total_payroll = total_payroll + 1000
+        elif _ == "Commander":
+            total_payroll = total_payroll + 800
+        elif _ == "Lt. Commander":
+            total_payroll = total_payroll + 600
+        elif _ == "Lieutenant" or _ == "Doctor":
+            total_payroll = total_payroll + 500
+        elif _ == "Ensign":
+            total_payroll = total_payroll + 200
+    return total_payroll
 
-def calculate_payroll(ranks):
 """
 
 def count_officers():
@@ -41,6 +55,5 @@ def count_officers():
             count = count + 1
     return count
 
-count_officers()
-
+"""
 
