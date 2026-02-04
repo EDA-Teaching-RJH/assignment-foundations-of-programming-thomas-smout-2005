@@ -1,4 +1,4 @@
-names = ["Freeman", "Ransom", "Billups", "Shaxs", "T'ana", "Marinar"]
+names = ["Freeman", "Ransom", "Billups", "Shaxs", "T'Ana", "Marinar"]
 ranks = ["Captain", "Commander", "Lt. Commander", "Lieutenant", "Commander", "Ensign"]
 divs = ["Command", "Command", "Operations", "Operations", "Sciences", "Command"]
 ids = ["001", "011", "101", "201", "301", "401"]
@@ -33,6 +33,16 @@ def display_roster():
 
 
 def search_crew(names, ranks, divs, ids):
+    term = input("Enter search term").lower().title()
+    for k in range(len(names)):
+        if names[k] == term:
+            print(names[k])
+        elif ranks[k] == term:
+            print(names[k])
+        elif divs[k] == term:
+            print(names[k])
+        elif ids[k] == term:
+            print(names[k])
 
 
 """
