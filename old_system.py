@@ -13,6 +13,7 @@ def run_system_monolith():
     loading = 0
     while loading < 5:
         print("Loading module " + str(loading))
+        loading = loading + 1   # Added a way for loading to increase, to avoid infinite loop
         
     
     while True:
@@ -25,19 +26,19 @@ def run_system_monolith():
         
         opt = input("Select option: ")
         
-        if opt = "1":  
+        if opt == "1":  # Changed the singular = to a double ==
             print("Current Crew List:")
             
-            for i in range(10):
+            for i in range(len(n)):   # Changed range from 10 to the length of the list n
                 print(n[i] + " - " + r[i]) 
                 
         elif opt == "2":
             new_name = input("Name: ")
             new_rank = input("Rank: ")
             new_div = input("Division: ")
-            
-           
             n.append(new_name)
+            r.append(new_rank)   # Made sure new rank was added to rank list r
+            d.append(new_div)   # Made sure new division was added to division list d
             print("Crew member added.")
             
         elif opt == "3":
@@ -54,9 +55,9 @@ def run_system_monolith():
             count = 0
             
             for rank in r:
-                if rank == "Captain" or "Commander": 
+                if rank == "Captain" or rank == "Commander":   # Corrected or statement so it checks both titles properly
                     count = count + 1
-            print("High ranking officers: " + count) 
+            print("High ranking officers: ", count)   # Changed + to a comma so print will work
             
         elif opt == "5":
             print("Shutting down.")
@@ -88,4 +89,4 @@ def run_system_monolith():
             
         print("End of cycle.")
 
-run_system_monolith
+run_system_monolith()   # Brackets at the end of this function added
