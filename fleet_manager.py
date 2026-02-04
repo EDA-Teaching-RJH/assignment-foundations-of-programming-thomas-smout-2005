@@ -22,14 +22,20 @@ def remove_member(names, ranks, divs, ids):
 
 def update_rank(names, ranks, ids):
 
+"""
 
-def display_roster(names, ranks, divs, ids):
+
+def display_roster():
+    print("{:<15} {:<15} {:<15} {:<15}".format("Name", "Rank", "Division", "ID"))
+    print("=== === === === === === === === === === === === ===")
+    for j in range(len(names)):
+        print("{:<15} {:<15} {:<15} {:<15}".format(names[j], ranks[j], divs[j], ids[j]))
 
 
 def search_crew(names, ranks, divs, ids):
 
-"""
 
+"""
 
 def filter_by_division():
     filter = input("Which would you like to filter by; Command, Operations, or Sciences").lower().title()
@@ -37,8 +43,6 @@ def filter_by_division():
         if divs[i] == filter:
             print(names[i])
 
-
-"""
 
 def calculate_payroll():
     total_payroll = 0
