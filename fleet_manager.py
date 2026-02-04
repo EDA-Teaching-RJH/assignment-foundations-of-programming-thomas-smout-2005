@@ -1,9 +1,10 @@
 names = ["Freeman", "Ransom", "Billups", "Shaxs", "T'ana", "Marinar"]
-ranks = ["Captain", "Commander", "Lt. Commander", "Lieutenant", "Doctor", "Ensign"]
-divs = ["Command", "Command", "Operations", "Security", "Medical", "Command"]
+ranks = ["Captain", "Commander", "Lt. Commander", "Lieutenant", "Commander", "Ensign"]
+divs = ["Command", "Command", "Operations", "Operations", "Sciences", "Command"]
 ids = ["001", "011", "101", "201", "301", "401"]
 
 """
+
 def main():
 
 
@@ -27,8 +28,16 @@ def display_roster(names, ranks, divs, ids):
 
 def search_crew(names, ranks, divs, ids):
 
+"""
 
-def filter_by_division(names, divs):
+
+def filter_by_division():
+    filter = input("Which would you like to filter by; Command, Operations, or Sciences").lower().title()
+    for i in range(len(divs)):
+        if divs[i] == filter:
+            print(names[i])
+
+
 """
 
 def calculate_payroll():
@@ -46,7 +55,6 @@ def calculate_payroll():
             total_payroll = total_payroll + 200
     return total_payroll
 
-"""
 
 def count_officers():
     count = 0
