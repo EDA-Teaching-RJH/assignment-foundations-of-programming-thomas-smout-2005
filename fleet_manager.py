@@ -23,7 +23,7 @@ def remove_member(names, ranks, divs, ids):
 def update_rank(names, ranks, ids):
 
 """
-
+"""
 
 def display_roster():
     print("{:<15} {:<15} {:<15} {:<15}".format("Name", "Rank", "Division", "ID"))
@@ -44,8 +44,6 @@ def search_crew(names, ranks, divs, ids):
         elif ids[k] == term:
             print(names[k])
 
-
-"""
 
 def filter_by_division():
     filter = input("Which would you like to filter by; Command, Operations, or Sciences").lower().title()
