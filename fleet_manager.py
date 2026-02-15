@@ -1,6 +1,30 @@
 
 def main():
     names, ranks, divs, ids = init_database()
+    while True:
+        user_choice = display_menu()
+        if user_choice == "1":
+            add_member(names, ranks, divs, ids)
+        elif user_choice == "2":
+            remove_member(names, ranks, divs, ids)
+        elif user_choice == "3":
+            update_rank(names, ranks, ids)
+        elif user_choice == "4":
+            display_roster(names, ranks, divs, ids)
+        elif user_choice == "5":
+            search_crew(names, ranks, divs, ids)
+        elif user_choice == "6":
+            filter_by_division(names, divs)
+        elif user_choice == "7":
+            calculate_payroll(ranks)
+        elif user_choice == "8":
+            count_officers(ranks)
+        elif user_choice == "9":
+            break
+        else:
+            print("Invalid input")
+
+
 
 
 def init_database():
@@ -24,6 +48,7 @@ def display_menu():
     print("6. Filter by Division")
     print("7. Calculate Payroll")
     print("8. Count Officers")
+    print("9. Log Out")
     print("--- ---- ---")
 
     print("Current User Logged In :", user_name)
