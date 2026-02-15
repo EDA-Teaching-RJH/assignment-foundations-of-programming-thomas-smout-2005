@@ -1,8 +1,9 @@
 
 def main():
     names, ranks, divs, ids = init_database()
+    user_name = input("What is your full name?").strip().title()
     while True:
-        user_choice = display_menu()
+        user_choice = display_menu(user_name)
         if user_choice == "1":
             add_member(names, ranks, divs, ids)
         elif user_choice == "2":
@@ -16,15 +17,13 @@ def main():
         elif user_choice == "6":
             filter_by_division(names, divs)
         elif user_choice == "7":
-            calculate_payroll(ranks)
+            print("--> The current payroll comes out to around", calculate_payroll(ranks), "latinum")
         elif user_choice == "8":
-            count_officers(ranks)
+            print("--> There are currently", count_officers(ranks), "officers on deck")
         elif user_choice == "9":
             break
         else:
             print("Invalid input")
-
-
 
 
 def init_database():
@@ -36,9 +35,7 @@ def init_database():
     return names, ranks, divs, ids
 
 
-def display_menu():
-    user_name = input("What is your full name?").strip().title()
-
+def display_menu(user_name):
     print("--- Menu ---")
     print("1. Add Crew")
     print("2. Remove Crew")
@@ -125,20 +122,27 @@ def search_crew(names, ranks, divs, ids):
     term = input("Enter search term").strip().title()
     for k in range(len(names)):
         if names[k] == term:
-            print(names[k])
+            print("--> Term found!")
+            print("--> {:<15} {:<15} {:<15} {:<15}".format("Name", "Rank", "Division", "ID"))
+            print("--> === === === === === === === === === === === === ===")
+            print("--> {:<15} {:<15} {:<15} {:<15}".format(names[k], ranks[k], divs[k], ids[k]))
         elif ranks[k] == term:
-            print(names[k])
+            print("--> Found!")
+            print("--> {:<15} {:<15} {:<15} {:<15}".format(names[k], ranks[k], divs[k], ids[k]))
         elif divs[k] == term:
-            print(names[k])
+            print("--> Found!")
+            print("--> {:<15} {:<15} {:<15} {:<15}".format(names[k], ranks[k], divs[k], ids[k]))
         elif ids[k] == term:
-            print(names[k])
+            print("--> Found!")
+            print("--> {:<15} {:<15} {:<15} {:<15}".format(names[k], ranks[k], divs[k], ids[k]))
 
 
 def filter_by_division(names, divs):
     filter = input("Which would you like to filter by; Command, Operations, or Sciences").strip().title()
+    print("--> List of crew in", filter)
     for i in range(len(divs)):
         if divs[i] == filter:
-            print(names[i])
+            print("->", names[i])
 
 
 def calculate_payroll(ranks):
@@ -165,3 +169,4 @@ def count_officers(ranks):
     return count
 
 
+main()
