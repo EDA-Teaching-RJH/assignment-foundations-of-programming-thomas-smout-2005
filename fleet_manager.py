@@ -1,14 +1,15 @@
-names = ["Freeman", "Ransom", "Billups", "Shaxs", "T'Ana", "Marinar"]
-ranks = ["Captain", "Commander", "Lt. Commander", "Lieutenant", "Commander", "Ensign"]
-divs = ["Command", "Command", "Operations", "Operations", "Sciences", "Command"]
-ids = ["001", "011", "101", "201", "301", "401"]
-
-"""
 
 def main():
+    names, ranks, divs, ids = init_database()
 
 
 def init_database():
+    names = ["Freeman", "Ransom", "Billups", "Shaxs", "T'Ana", "Marinar"]
+    ranks = ["Captain", "Commander", "Lt. Commander", "Lieutenant", "Commander", "Ensign"]
+    divs = ["Command", "Command", "Operations", "Operations", "Sciences", "Command"]
+    ids = ["001", "011", "101", "201", "301", "401"]
+
+    return names, ranks, divs, ids
 
 
 def display_menu():
@@ -22,10 +23,8 @@ def remove_member(names, ranks, divs, ids):
 
 def update_rank(names, ranks, ids):
 
-"""
-"""
 
-def display_roster():
+def display_roster(names, ranks, divs, ids):
     print("{:<15} {:<15} {:<15} {:<15}".format("Name", "Rank", "Division", "ID"))
     print("=== === === === === === === === === === === === ===")
     for j in range(len(names)):
@@ -33,7 +32,7 @@ def display_roster():
 
 
 def search_crew(names, ranks, divs, ids):
-    term = input("Enter search term").lower().title()
+    term = input("Enter search term").strip().title()
     for k in range(len(names)):
         if names[k] == term:
             print(names[k])
@@ -45,14 +44,14 @@ def search_crew(names, ranks, divs, ids):
             print(names[k])
 
 
-def filter_by_division():
-    filter = input("Which would you like to filter by; Command, Operations, or Sciences").lower().title()
+def filter_by_division(names, divs):
+    filter = input("Which would you like to filter by; Command, Operations, or Sciences").strip().title()
     for i in range(len(divs)):
         if divs[i] == filter:
             print(names[i])
 
 
-def calculate_payroll():
+def calculate_payroll(ranks):
     total_payroll = 0
     for _ in ranks:
         if _ == "Captain":
@@ -68,12 +67,11 @@ def calculate_payroll():
     return total_payroll
 
 
-def count_officers():
+def count_officers(ranks):
     count = 0
     for rank in ranks:
         if rank == "Captain" or rank == "Commander":
             count = count + 1
     return count
 
-"""
 
