@@ -66,7 +66,7 @@ def add_member(names, ranks, divs, ids):
     
 
 def remove_member(names, ranks, divs, ids):
-    removable_id = input("ID to remove: ").strip() 
+    removable_id = input("ID to remove: ").strip()
     remove_index = ids.index(removable_id)
     names.pop(remove_index)
     ranks.pop(remove_index)
@@ -76,6 +76,17 @@ def remove_member(names, ranks, divs, ids):
 
 
 def update_rank(names, ranks, ids):
+    update_id = input("ID to update: ").strip()
+    update_index = ids.index(update_id)
+    print(names[update_index], "is currently a", ranks[update_index])
+    while True:
+        new_rank = input("New rank: ").strip().title()
+        if new_rank == "Captain" or new_rank == "Commander" or new_rank == "Lt. Commander" or new_rank == "Lieutenant" or new_rank == "Ensign":
+            ranks[update_index] = new_rank
+            break
+        else:
+            print("Invalid rank! Please enter a valid TNG rank")
+    print(names[update_index], "has been changed to a", ranks[update_index])
 
 
 def display_roster(names, ranks, divs, ids):
