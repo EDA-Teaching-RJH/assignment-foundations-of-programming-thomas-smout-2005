@@ -32,6 +32,31 @@ def display_menu():
 
 
 def add_member(names, ranks, divs, ids):
+    new_name = input("Name: ")
+    while True:
+        new_rank = input("Rank: ").strip().title()
+        if new_rank == "Captain" or new_rank == "Commander" or new_rank == "Lt. Commander" or new_rank == "Lieutenant" or new_rank == "Ensign":
+            break
+        else:
+            print("Invalid rank! Please enter a valid TNG rank")
+    while True:
+        new_div = input("Division: ").strip().title()
+        if new_div == "Command" or new_div == "Operations" or new_div == "Sciences":
+            break
+        else:
+            print("Invalid division! Please enter a valid TNG division")
+    while True:
+        new_id = input("ID : ")
+        for _ in range(len(ids)):
+            if _ == new_id:
+                print("Id already in use! Please input a different id number")
+            else:
+                break
+    names.append(new_name)
+    ranks.append(new_rank)
+    divs.append(new_div)
+    ids.append(new_id)
+    print("Crew member added.")
 
 
 def remove_member(names, ranks, divs, ids):
