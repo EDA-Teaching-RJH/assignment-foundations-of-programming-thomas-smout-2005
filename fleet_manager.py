@@ -66,6 +66,13 @@ def add_member(names, ranks, divs, ids):
     
 
 def remove_member(names, ranks, divs, ids):
+    removable_id = input("ID to remove: ").strip() 
+    remove_index = ids.index(removable_id)
+    names.pop(remove_index)
+    ranks.pop(remove_index)
+    divs.pop(remove_index)
+    ids.pop(remove_index)
+    print("Removed Member")
 
 
 def update_rank(names, ranks, ids):
