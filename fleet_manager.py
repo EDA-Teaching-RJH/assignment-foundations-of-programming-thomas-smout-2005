@@ -13,6 +13,22 @@ def init_database():
 
 
 def display_menu():
+    user_name = input("What is your full name?").strip().title()
+
+    print("--- Menu ---")
+    print("1. Add Crew")
+    print("2. Remove Crew")
+    print("3. Update Rank")
+    print("4. Display Roster")
+    print("5. Search for Crew")
+    print("6. Filter by Division")
+    print("7. Calculate Payroll")
+    print("8. Count Officers")
+    print("--- ---- ---")
+
+    print("Current User Logged In :", user_name)
+    user_choice = input("Select Option : ")
+    return user_choice
 
 
 def add_member(names, ranks, divs, ids):
