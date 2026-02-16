@@ -1,7 +1,7 @@
 
 def main():
     names, ranks, divs, ids = init_database()
-    user_name = input("What is your full name?").strip().title()
+    user_name = input("What is your full name? ").strip().title()
     while True:
         user_choice = display_menu(user_name)
         if user_choice == "1":
@@ -119,7 +119,7 @@ def display_roster(names, ranks, divs, ids):
 
 
 def search_crew(names, ranks, divs, ids):
-    term = input("Enter search term").strip().title()
+    term = input("Enter search term : ").strip().title()
     for k in range(len(names)):
         if names[k] == term:
             print("--> Term found!")
@@ -127,13 +127,19 @@ def search_crew(names, ranks, divs, ids):
             print("--> === === === === === === === === === === === === ===")
             print("--> {:<15} {:<15} {:<15} {:<15}".format(names[k], ranks[k], divs[k], ids[k]))
         elif ranks[k] == term:
-            print("--> Found!")
+            print("--> Term found!")
+            print("--> {:<15} {:<15} {:<15} {:<15}".format("Name", "Rank", "Division", "ID"))
+            print("--> === === === === === === === === === === === === ===")
             print("--> {:<15} {:<15} {:<15} {:<15}".format(names[k], ranks[k], divs[k], ids[k]))
         elif divs[k] == term:
-            print("--> Found!")
+            print("--> Term found!")
+            print("--> {:<15} {:<15} {:<15} {:<15}".format("Name", "Rank", "Division", "ID"))
+            print("--> === === === === === === === === === === === === ===")
             print("--> {:<15} {:<15} {:<15} {:<15}".format(names[k], ranks[k], divs[k], ids[k]))
         elif ids[k] == term:
-            print("--> Found!")
+            print("--> Term found!")
+            print("--> {:<15} {:<15} {:<15} {:<15}".format("Name", "Rank", "Division", "ID"))
+            print("--> === === === === === === === === === === === === ===")
             print("--> {:<15} {:<15} {:<15} {:<15}".format(names[k], ranks[k], divs[k], ids[k]))
 
 
